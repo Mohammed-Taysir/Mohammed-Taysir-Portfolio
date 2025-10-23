@@ -1,20 +1,20 @@
 import React from 'react'
 import Home from './components/home/Home'
 import ParticlesBackground from './components/particles/ParticlesBackground'
-import { Box, Typography } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
+import Main from './components/main/Main'
+import Navbar from './components/navbar/Navbar'
 
 function App() {
   return (
     <div>
       
-        <ParticlesBackground  />
-     
-      <Box sx = {{
-        position: 'relative',
-        zIndex: 999,
-      }} component={'main'} >
-       <Home />
-      </Box>
+      <ParticlesBackground  />
+      <Navbar />
+     <Container maxWidth = 'lg'>
+       
+      <Main />
+     </Container>
     </div>
   )
 }

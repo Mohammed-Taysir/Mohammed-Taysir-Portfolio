@@ -3,11 +3,13 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 // import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
 // import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
+import { useTheme } from "@emotion/react";
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 
 function ParticlesBackground() {
   const [init, setInit] = useState(false);
+  const theme = useTheme();
 
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -32,7 +34,7 @@ function ParticlesBackground() {
     () => ({
       background: {
         color: {
-          value: "#121212",
+          value: theme.palette.background.default,
         },
       },
       fpsLimit: 120,
@@ -59,10 +61,10 @@ function ParticlesBackground() {
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: theme.palette.primary.main,
         },
         links: {
-          color: "#ffffff",
+          color: "#665e07ff",
           distance: 150,
           enable: true,
           opacity: 0.5,
@@ -96,7 +98,7 @@ function ParticlesBackground() {
       },
       detectRetina: true,
     }),
-    [],
+    [theme],
   );
 
   if (init) {

@@ -3,7 +3,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <Box color = '#fff'>Home</Box>
+    <Box >Home</Box>
   )
 }
 
