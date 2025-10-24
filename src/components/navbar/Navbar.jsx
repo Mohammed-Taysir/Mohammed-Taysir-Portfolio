@@ -131,7 +131,7 @@ function Navbar() {
                     return <ListItem key={item.name} disablePadding sx={{
 
                     }}>
-                      <ListItemButton sx={{
+                      <ListItemButton component = {Link} href = {item.path} sx={{
                         gap: 1,
                         justifyContent: 'center',
                         borderRadius: 2
