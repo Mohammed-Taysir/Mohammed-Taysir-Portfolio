@@ -7,7 +7,7 @@ import { useTheme } from '@emotion/react';
 import { Link, useMediaQuery } from '@mui/material';
 
 
-function CustomList({center = true,children}) {
+function CustomList({positioning,children}) {
     const mediaLarge = useMediaQuery('(max-width: 1115px)');
 
 
@@ -15,9 +15,7 @@ function CustomList({center = true,children}) {
   return (
    <Box className = "list" display={'none'} zIndex={999999} position = 'absolute' sx = {{
     top: '100%',
-    right: !center && '100%',
-    left: center && '50%',
-    transform: center && 'translateX(-50%)',
+    ...positioning,
     pt: 3,
     transition: '0.7s'
    }} >

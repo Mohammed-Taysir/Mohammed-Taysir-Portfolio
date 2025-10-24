@@ -1,4 +1,4 @@
-import { Box, Container, Link, Stack, Typography, useTheme } from '@mui/material'
+import { Box, Container, Link, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React, { useContext } from 'react'
 import logo from '../../assets/logo.webp'
 import CustomList from '../list/CustomList';
@@ -65,7 +65,7 @@ const aboutList = [
 function Navbar() {
   const theme = useTheme();
   const { mode, setMode } = useContext(ThemeContext);
- 
+ const isLargeSecreen = useMediaQuery('(max-width: 1115px)');
   console.log(mode)
   return (
     <Box component={'header'} position={'relative'} py={2} sx={{
@@ -124,7 +124,7 @@ function Navbar() {
                   transition: '0.7s',
                   color: theme.palette.text.secondary
                 }} className='arrow' />
-                <CustomList>
+                <CustomList positioning={{left: '50%', transform: 'translateX(-50%)'}}>
                   {aboutList.map(item => {
                     const ListIcon = item.icon;
 
@@ -166,7 +166,10 @@ function Navbar() {
                   mode === "light"? <LightModeOutlinedIcon />: <DarkModeOutlinedIcon />
                 }
 
-                <CustomList center = {false}>
+                <CustomList positioning={{
+                  left: isLargeSecreen ? "-335%": "50%",
+                  transform: !isLargeSecreen && "translateX(-50%)"
+                }}>
                   {
                     modeList.map(item => {
                       const ListIcon = item.icon;
