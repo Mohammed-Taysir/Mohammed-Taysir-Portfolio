@@ -14,7 +14,7 @@ function CustomList({positioning,children}) {
     const theme = useTheme();
   return (
    <Box className = "list" display={'none'} zIndex={999999} position = 'absolute' sx = {{
-    top: '100%',
+    
     ...positioning,
     pt: 3,
     transition: '0.7s'

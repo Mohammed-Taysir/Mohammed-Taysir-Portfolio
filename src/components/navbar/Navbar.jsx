@@ -1,4 +1,4 @@
-import { Box, Container, Link, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Container, IconButton, Link, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React, { useContext } from 'react'
 import logo from '../../assets/logo.webp'
 import CustomList from '../list/CustomList';
@@ -17,16 +17,12 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { ThemeContext } from '../../context/ThemeContext';
-const modeList = [
-  {
-    name: 'dark',
-    icon: DarkModeOutlinedIcon,
-  },
-  {
-    name: 'light',
-    icon: LightModeOutlinedIcon
-  }
-]
+import MenuIcon from '@mui/icons-material/Menu';
+import ResponsiveNav from './ResponsiveNav';
+import ModeSwitch from '../mode-switch/ModeSwitch';
+
+
+
 
 const aboutList = [
   {
@@ -65,7 +61,8 @@ const aboutList = [
 function Navbar() {
   const theme = useTheme();
   const { mode, setMode } = useContext(ThemeContext);
- const isLargeSecreen = useMediaQuery('(max-width: 1115px)');
+  const isLargeSecreen = useMediaQuery('(max-width: 1115px)');
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');
   console.log(mode)
   return (
     <Box component={'header'} position={'relative'} py={2} sx={{
@@ -88,86 +85,99 @@ function Navbar() {
               }}>Alkhatib</Typography>
             </Link>
           </Box>
-          <Stack alignItems={ 'center'} direction = 'row' spacing = {2}>
-            <Stack direction='row' alignItems={'center'} spacing={3}>
-              <Link href='#home' sx={{
-                textDecoration: 'none',
-                color: theme.palette.text.secondary,
-                fontSize: '1rem'
-              }} variant='body1'>Home</Link>
-              <Link href='#contact' sx={{
-                textDecoration: 'none',
-                color: theme.palette.text.secondary,
-                fontSize: '1rem'
-              }} variant='body1'>Contact Me</Link>
-              <Box sx={{
-                display: 'flex',
-                alignItems: 'center',
-                position: 'relative',
-                ":hover .list": {
-                  display: 'block'
-                },
-                ":hover .arrow": {
-                  rotate: '180deg'
-                }
-              }}>
-                <Link href='#about' sx={{
+          {
+            !isSmallScreen ? (<Stack alignItems={'center'} direction='row' spacing={2}>
+              <Stack direction='row' alignItems={'center'} spacing={5}>
+                <Link href='#home' sx={{
                   textDecoration: 'none',
                   color: theme.palette.text.secondary,
-                  fontSize: '1rem',
+                  fontSize: '16px',
+                  transition: '0.3s',
+                  ":hover": {
+                    color: theme.palette.primary.main
+                  }
+                }} variant='body1'>Home</Link>
+                <Link href='#contact' sx={{
+                  textDecoration: 'none',
+                  color: theme.palette.text.secondary,
+                  fontSize: '16px',
+                  transition: '0.3s',
+                  ":hover": {
+                    color: theme.palette.primary.main
+                  }
+                }} variant='body1'>Contact Me</Link>
+                <Box sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  position: 'relative',
+                  ":hover .list": {
+                    display: 'block'
+                  },
+                  ":hover .arrow": {
+                    rotate: '180deg'
+                  }
+                }}>
+                  <Link href='#about' sx={{
+                    textDecoration: 'none',
+                    color: theme.palette.text.secondary,
+                    fontSize: '16px',
+                    transition: '0.3s',
+                    ":hover": {
+                      color: theme.palette.primary.main
+                    }
 
-                }} variant='body1' >About
+                  }} variant='body1' >About
 
-                </Link>
+                  </Link>
 
-                <KeyboardArrowDownOutlinedIcon fontSize='small' sx={{
-                  transition: '0.7s',
-                  color: theme.palette.text.secondary
-                }} className='arrow' />
-                <CustomList positioning={{left: '50%', transform: 'translateX(-50%)'}}>
-                  {aboutList.map(item => {
-                    const ListIcon = item.icon;
+                  <KeyboardArrowDownOutlinedIcon fontSize='small' sx={{
+                    transition: '0.7s',
+                    color: theme.palette.text.secondary
+                  }} className='arrow' />
+                  <CustomList positioning={{top: '100%', left: '50%', transform: 'translateX(-50%)', minWidth: 190 }}>
+                    {aboutList.map(item => {
+                      const ListIcon = item.icon;
 
-                    return <ListItem key={item.name} disablePadding sx={{
+                      return <ListItem key={item.name} disablePadding sx={{
 
-                    }}>
-                      <ListItemButton component = {Link} href = {item.path} sx={{
-                        gap: 1,
-                        justifyContent: 'center',
-                        borderRadius: 2
-                      }} >
-                        <ListItemIcon sx={{
-                          minWidth: 0
+                      }}>
+                        <ListItemButton component={Link} href={item.path} sx={{
+                          gap: 1,
+                          justifyContent: 'center',
+                          borderRadius: 2
                         }} >
-                          <ListIcon fontSize='small' />
-                        </ListItemIcon>
-                        <ListItemText primary={item.name} sx={{
-                          ".MuiTypography-root": {
-                            fontSize: '0.8rem',
-                            color: theme.palette.text.secondary
-                          }
-                        }} />
-                      </ListItemButton>
-                    </ListItem>
-                  })}
-                </CustomList>
-              </Box>
+                          <ListItemIcon sx={{
+                            minWidth: 0
+                          }} >
+                            <ListIcon fontSize='small' />
+                          </ListItemIcon>
+                          <ListItemText primary={item.name} sx={{
+                            ".MuiTypography-root": {
+                              fontSize: '0.8rem',
+                              color: theme.palette.text.secondary
+                            }
+                          }} />
+                        </ListItemButton>
+                      </ListItem>
+                    })}
+                  </CustomList>
+                </Box>
 
 
-              
-            </Stack>
-            <Box sx={{
+
+              </Stack>
+              {/* <Box sx={{
                 position: 'relative',
                 ':hover .list': {
                   display: 'block',
                 }
               }} >
                 {
-                  mode === "light"? <LightModeOutlinedIcon />: <DarkModeOutlinedIcon />
+                  mode === "light" ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />
                 }
 
                 <CustomList positioning={{
-                  left: isLargeSecreen ? "-335%": "50%",
+                  left: isLargeSecreen ? "-335%" : "50%",
                   transform: !isLargeSecreen && "translateX(-50%)"
                 }}>
                   {
@@ -201,8 +211,10 @@ function Navbar() {
                   }
                 </CustomList>
 
-              </Box>
-          </Stack>
+              </Box> */}
+              <ModeSwitch />
+            </Stack>) : <ResponsiveNav />
+          }
         </Stack>
       </Container>
 
