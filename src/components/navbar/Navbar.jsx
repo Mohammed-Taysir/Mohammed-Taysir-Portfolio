@@ -1,6 +1,6 @@
 import { Box, Container, IconButton, Link, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React, { useContext } from 'react'
-import logo from '../../assets/logo.webp'
+import logo from '../../assets/Logo.webp'
 import CustomList from '../list/CustomList';
 import MemoryIcon from '@mui/icons-material/Memory';
 import ImportContactsTwoToneIcon from '@mui/icons-material/ImportContactsTwoTone';
