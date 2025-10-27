@@ -50,7 +50,7 @@ function Info() {
       </Box>
 
       <Stack direction={'row'} alignItems={'center'} spacing = {2}>
-        <MotionButton onClick={() => {
+        <MotionButton handleClick={() => {
           window.open('/cv.pdf', '_blank')
         }}  styleCss={{
           textTransform: 'capitalize',

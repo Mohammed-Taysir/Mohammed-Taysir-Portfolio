@@ -2,7 +2,7 @@ import { Button } from '@mui/material'
 import { motion } from 'framer-motion'
 import React from 'react'
 
-function MotionButton({styleCss, children}) {
+function MotionButton({styleCss, handleClick, children}) {
     const ButtonMotion = motion(Button);
   return (
     <ButtonMotion 
@@ -11,6 +11,9 @@ function MotionButton({styleCss, children}) {
     transition={{ type: "spring", stiffness: 300 }}
     variant='contained'
     size='large'
+    onClick = {()=> {
+        handleClick()
+    }}
     sx = {
        styleCss
     } >
