@@ -44,7 +44,7 @@ function Info() {
       </Box>
 
       <Stack direction={'row'} alignItems={'center'} spacing = {2}>
-        <Button component = {Link} to = '/cv' target='_blank' variant='contained' size='large' sx={{
+        <Button component = {'a'} href = "cv.html" target='_blank' variant='contained' size='large' sx={{
           textTransform: 'capitalize',
           color: theme.palette.text.primary
         }}>View Cv</Button>
