@@ -1,12 +1,18 @@
 import { Box, useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
 import image from "../../assets/my-photo.jpg"
+import { motion } from 'framer-motion';
 
 function MainImage() {
   const theme = useTheme();
   const isMidScreen = useMediaQuery('(max-width: 999px)');
+  const MotionBox = motion(Box);
   return (
-    <Box
+    <MotionBox
+    initial = {{x: 100, opacity: 0}} 
+    whileInView={{x: 0, opacity: 1, transition: {
+      duration: 2
+    }}}
       sx={{
         perspective: '800px',
         bgcolor: theme.palette.primary.main,
@@ -33,7 +39,7 @@ function MainImage() {
           }
         }}
       />
-    </Box>
+    </MotionBox>
   );
 
 }

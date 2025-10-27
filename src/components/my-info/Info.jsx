@@ -1,19 +1,25 @@
 import { Box, Button, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { motion } from 'framer-motion';
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { ReactTyped } from "react-typed";
+import MotionButton from '../animation/MotionButton';
 function Info() {
   const theme = useTheme();
 
   const isMidScreen = useMediaQuery('(max-width: 999px)');
   const isLargeScreen = useMediaQuery('(max-width: 1070px)');
   const isSmallScreen = useMediaQuery('(max-width: 450px)');
+  
+  const MotionBox = motion(Box);
  
   
 
   
   return (
-    <Box width={isMidScreen? "100%": isLargeScreen ? "50%": "60%"} sx={{
+    <MotionBox initial = {{x: -100, opacity: 0}} whileInView={{x: 0, opacity: 1, transition: {
+      duration: 2
+    }}} width={isMidScreen? "100%": isLargeScreen ? "50%": "60%"} sx={{
       display: 'flex',
       flexDirection: 'column',
       alignItems: isMidScreen && "center" ,
@@ -44,21 +50,21 @@ function Info() {
       </Box>
 
       <Stack direction={'row'} alignItems={'center'} spacing = {2}>
-        <Button onClick={() => {
+        <MotionButton onClick={() => {
           window.open('/cv.pdf', '_blank')
-        }} variant='contained' size='large' sx={{
+        }}  styleCss={{
           textTransform: 'capitalize',
           color: theme.palette.text.primary
-        }}>View Cv</Button>
+        }}>View Cv</MotionButton>
 
-        <Button variant='contained' size='large' sx={{
+        <MotionButton  styleCss={{
           textTransform: 'capitalize',
           color: theme.palette.primary.main,
           bgcolor: theme.palette.text.primary
-        }}>More Info</Button>
+        }}>More Info</MotionButton>
       </Stack>
 
-    </Box>
+    </MotionBox>
   )
 }
 
