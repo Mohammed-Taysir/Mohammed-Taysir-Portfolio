@@ -9,6 +9,7 @@ function MainImage() {
   const MotionBox = motion(Box);
   return (
     <MotionBox
+    overflow={'hidden'}
     initial = {{x: 100, opacity: 0}} 
     whileInView={{x: 0, opacity: 1, transition: {
       duration: 2
@@ -20,6 +21,8 @@ function MainImage() {
         borderRadius: '50%',
         width: 400,
         order: isMidScreen && -1,
+        widht: 368,
+        height: 368,
         maxWidth: '100%'
     
 

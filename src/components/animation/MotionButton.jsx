@@ -11,9 +11,7 @@ function MotionButton({styleCss, handleClick, children}) {
     transition={{ type: "spring", stiffness: 300 }}
     variant='contained'
     size='large'
-    onClick = {()=> {
-        handleClick()
-    }}
+   
     sx = {
        styleCss
     } >
