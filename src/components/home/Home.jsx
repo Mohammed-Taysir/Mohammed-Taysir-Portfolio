@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import MyInfo from '../my-info/MyInfo'
+import Stats from '../stats/Stats'
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
         zIndex: 999,
       }} component={'main'} >
         <MyInfo />
+        <Stats />
       </Box>
   )
  

@@ -26,7 +26,8 @@ function Info() {
       display: 'flex',
       flexDirection: 'column',
       alignItems: isMidScreen && "center",
-      gap: 2
+      gap: 2,
+      p: 1
     }} >
       <Typography sx={{
         fontSize: '16px',

@@ -17,7 +17,7 @@ function MyInfo() {
         flexDirection: isMidScreen? "column": "row" ,
         gap: isMidScreen &&  4,
         py: 8
-    }} >
+    }} component={'section'} >
         <Info />
         <MainImage />
 
