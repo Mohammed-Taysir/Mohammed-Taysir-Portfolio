@@ -2,8 +2,10 @@
 import { Box, useMediaQuery } from '@mui/material'
 import React from 'react'
 
+import Info from './Info';
+
 import MainImage from './MainImage'
-import Info from './info';
+
 
 function MyInfo() {
   const isMidScreen = useMediaQuery('(max-width: 999px)');
