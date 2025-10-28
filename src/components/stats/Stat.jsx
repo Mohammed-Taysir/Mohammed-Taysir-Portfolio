@@ -2,7 +2,7 @@ import { Box, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { motion, useInView } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react'
 
-function Stat({ num, title }) {
+function Stat({ num, delay, title }) {
     const theme = useTheme();
      
     const midScreen = useMediaQuery('(max-width: 992px)');
@@ -10,41 +10,26 @@ function Stat({ num, title }) {
     const gap = theme.spacing(1);
     const ref = useRef();
 
-    const isInView = useInView(ref, {once: false});
+ 
    
-    const [count, setCount] = useState(0);
+  
+    const BoxMotion = motion(Box);
 
-    useEffect(() => {
-        if(isInView)
-        {
-            
-
-            const interval = setInterval(() => {
-            
-                setCount(prev => {
-                    if(prev < num)
-                        prev += 1;
-                    else 
-                        clearInterval(interval);
-
-                    return prev;
-                })
-                
-            }, 120);
-
-            
-        }else {
-            setCount(0);
-        }
-    }, [isInView])
+   
     
 
     
 
 
     return (
-        <Box 
-        ref = {ref}
+        <BoxMotion 
+        initial = {{y: 100, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition= {{
+            delay: delay,
+            transition: 0.5
+        }}
+
         display={'flex'} flexGrow={1}   flexDirection={'column'} alignItems={'center'} justifyContent={'center'} bgcolor={theme.palette.background.paper} borderRadius={14} sx={{
             py: 4,
             width:smallScreen? '100%': midScreen?  `calc(50% - 32px)` : `calc(25% - 48px)`,
@@ -62,12 +47,12 @@ function Stat({ num, title }) {
 
             <Box   className='num' fontSize="30px" fontWeight={'bold'} color={theme.palette.primary.main} sx = {{
                 transition: '0.3s'
-            }} >{count}+</Box>
+            }} >{num}+</Box>
             <Typography className = "title" fontSize='15px' color={theme.palette.text.secondary} sx = {{
                 transition: '0.3s'
             }}>{title}</Typography>
 
-        </Box>
+        </BoxMotion>
     )
 }
 
