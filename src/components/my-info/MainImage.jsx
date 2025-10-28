@@ -3,6 +3,7 @@ import React from 'react'
 import image from "../../assets/my-photo.jpg"
 import { motion } from 'framer-motion';
 
+
 function MainImage() {
   const theme = useTheme();
   const isMidScreen = useMediaQuery('(max-width: 999px)');
@@ -12,7 +13,7 @@ function MainImage() {
     overflow={'hidden'}
     initial = {{x: 100, opacity: 0}} 
     whileInView={{x: 0, opacity: 1, transition: {
-      duration: 2
+      duration: 0.5
     }}}
       sx={{
         perspective: '800px',
@@ -28,18 +29,23 @@ function MainImage() {
 
       }}
     >
-      <Box
+      <MotionBox
+      initial = {{scale: 0}}
+      whileInView={{scale: 1}}
+      transition={{
+        delay: 0.5,
+        duration: 1
+      }}
         component={'img'}
         src={image}
         sx={{
-          width: '100%',
+          width: "100%",
+    
           height: '100%',
           borderRadius: '50%',
           transformStyle: 'preserve-3d',
           transition: 'transform 0.5s',
-          '&:hover': {
-            transform: 'rotateY(20deg) rotateX(10deg)', // ← هذا يفعّل الـperspective عند التحريك
-          }
+          
         }}
       />
     </MotionBox>

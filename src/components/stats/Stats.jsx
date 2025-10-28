@@ -21,7 +21,12 @@ function Stats() {
       flexDirection: 'column',
       gap: 10
     }}>
-      <SectionTitle title = "Statistics" icon = {EqualizerIcon} />
+      <SectionTitle  >
+        <Typography color={theme.palette.text.primary} fontSize="1.5rem">Statistics</Typography>
+        <EqualizerIcon sx={{
+          color: theme.palette.primary.main
+        }} />
+      </SectionTitle>
       <Box  sx = {{
         display: 'flex',
         flexWrap: 'wrap',

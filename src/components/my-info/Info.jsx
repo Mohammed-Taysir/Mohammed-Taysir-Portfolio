@@ -13,6 +13,7 @@ function Info() {
 
   const MotionBox = motion(Box);
   const ButtonMotion = motion(Button)
+  
 
 
 
@@ -20,7 +21,7 @@ function Info() {
   return (
     <MotionBox overflow = {'hidden'}  initial={{ x: -100, opacity: 0 }} whileInView={{
       x: 0, opacity: 1, transition: {
-        duration: 2
+        duration: 0.5
       }
     }} width={isMidScreen ? "100%" : isLargeScreen ? "50%" : "60%"} sx={{
       display: 'flex',

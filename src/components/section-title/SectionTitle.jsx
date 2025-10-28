@@ -3,8 +3,8 @@ import React from 'react'
 import theme from '../../theme';
 import {motion} from 'framer-motion'
 
-function SectionTitle({ title, icon }) {
-  const Icon = icon;
+function SectionTitle({ children}) {
+
   const theme = useTheme();
   const MotionBox = motion(Box);
 
@@ -30,10 +30,7 @@ function SectionTitle({ title, icon }) {
           
         }}>
 
-        <Typography color={theme.palette.text.primary} fontSize="1.5rem">{title}</Typography>
-        <Icon sx={{
-          color: theme.palette.primary.main
-        }} />
+        {children}
 
       </MotionBox>
 
