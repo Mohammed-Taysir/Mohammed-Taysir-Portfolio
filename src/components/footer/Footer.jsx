@@ -12,6 +12,8 @@ function Footer() {
         zIndex: 999,
         display: 'flex',
         justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        rowGap: 1,
         borderRadius: 50,
         py: 2,
         px: 6,
@@ -23,7 +25,7 @@ function Footer() {
         <CodeOffIcon  />
        <Typography fontSize = '1.2rem' color = {theme.palette.primary.main} fontWeight = 'bold'>Mohammed Alkhatib</Typography>
      </Box>
-      <Typography>Copy Right &copy; {new Date().getFullYear()} - All Rights Reserved</Typography>
+      <Typography fontSize = "15px">Copy Right &copy; {new Date().getFullYear()} - All Rights Reserved</Typography>
     </Box>
     </Box>
   )
