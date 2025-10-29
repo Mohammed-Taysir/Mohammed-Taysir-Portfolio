@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 
 function Stats() {
   const theme = useTheme();
-  const MotionTypog = motion(Box);
+  const MotionBox = motion(Box);
   const MotionButton = motion(Button);
  
   return (
@@ -40,23 +40,19 @@ function Stats() {
         <Stat delay={1.5} num = {1} title = {"Clients"}  />
       </Box>
 
-      <Box display={'flex'} flexDirection={'column'} gap = {2} alignItems={'center'}>
-        <MotionTypog
-        initial = {{y: 100, opacity: 0}}
+      <MotionBox
+      initial = {{y: 100, opacity: 0}}
         whileInView={{y: 0, opacity: 1}}
         transition = {{
           delay: 1.5,
           duration: 0.5
         }}
+       display={'flex'} flexDirection={'column'} gap = {2} alignItems={'center'}>
+        <Typography
+        
         color = {theme.palette.text.secondary} align='center' lineHeight={'1.6'}>I’m a results-driven software engineer with a strong ability to communicate ideas clearly and collaborate effectively across teams. I thrive in fast-paced, dynamic settings where creativity and precision go hand in hand. Whether working independently or leading a project, I take pride in delivering high-quality solutions that make an impact. I’m always eager to embrace new technologies, overcome challenges, and continue evolving both technically and professionally.
-      </MotionTypog>
-      <MotionButton 
-      initial = {{y: 50, opacity: 0}}
-      whileInView={{y: 0, opacity: 1}}
-      transition = {{
-        delay: 1.5,
-        duration: 0.5
-      }}
+      </Typography>
+      <Button 
       component = {'a'} href = "https://github.com/Mohammed-Taysir" target = '_blank' variant='contained' sx = {{
         textTransform: 'capitalize',
         bgcolor: theme.palette.background.paper,
@@ -70,8 +66,8 @@ function Stats() {
         px: 3,
         py: 2
 
-      }} size = 'large' fontWeight = 'normal' >Show GitHub <GitHubIcon /> </MotionButton>
-      </Box>
+      }} size = 'large' fontWeight = 'normal' >Show GitHub <GitHubIcon /> </Button>
+      </MotionBox>
 
     </Box>
   )

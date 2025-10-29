@@ -14,6 +14,7 @@ import AutorenewIcon from "@mui/icons-material/Autorenew";
 import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
 import Skill from './Skill';
 import ImageLoader from './ImageLoader';
+import { motion } from 'framer-motion';
 const topSkills = [
     { skill: "Effective Communication", icon: HandshakeOutlinedIcon },
     { skill: "Teamwork & Collaboration", icon: GroupOutlinedIcon },
@@ -35,46 +36,71 @@ const bottomSkills = [
 
 function SoftSkills() {
     const isMidScreen = useMediaQuery('(max-width: 820px)');
+    const MotionStack = motion(Stack);
     return (
-        <Box py={5} display={'flex'} flexDirection={'column'} gap = {10}>
+        <Box py={5} display={'flex'} flexDirection={'column'} gap={10}>
             <SectionTitle>
                 <TwoWordsTitle first='Soft' last="Skills" icon={ImportContactsTwoToneIcon} />
             </SectionTitle>
 
             <Box>
-                <Stack  direction={isMidScreen? "column":'row'} alignItems={'center'} justifyContent={'center'} spacing = {2} mb = {isMidScreen && 2}>
+                <MotionStack
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{
+                        duration: 0.5
+                    }}
+                    direction={isMidScreen ? "column" : 'row'} alignItems={'center'} justifyContent={'center'} spacing={2} mb={isMidScreen && 2}>
                     {
-                        topSkills.map(skill => (<Skill skill = {skill.skill} icon = {skill.icon} key = {skill.skill} />))
+                        topSkills.map(skill => (<Skill skill={skill.skill} icon={skill.icon} key={skill.skill} />))
                     }
+                </MotionStack>
+
+                <Stack direction={isMidScreen ? 'column' : 'row'} justifyContent={'space-between'} alignItems={'center'} >
+                    <MotionStack
+                        initial={{ x: -100, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{
+                            duration: 0.5
+                        }}
+                        spacing={isMidScreen ? 2 : 10}>
+                        {
+                            leftSkills.map(skill => (<Skill skill={skill.skill} icon={skill.icon} key={skill.skill} />))
+
+                        }
+                    </MotionStack>
+
+                    <Box my={isMidScreen ? 5 : 10}>
+                        <ImageLoader />
+                    </Box>
+
+                    <MotionStack
+                        initial={{ x: 100, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{
+                            duration: 0.5
+                        }}
+                        spacing={isMidScreen ? 2 : 10}>
+                        {
+                            rightSkills.map(skill => (<Skill skill={skill.skill} icon={skill.icon} key={skill.skill} />))
+
+                        }
+
+                    </MotionStack>
+
                 </Stack>
 
-                <Stack direction={isMidScreen? 'column' :'row'} justifyContent={'space-between'} alignItems={'center'} >
-                    <Stack spacing = {isMidScreen?2 :10}>
-                        {
-                            leftSkills.map(skill => (<Skill skill = {skill.skill} icon = {skill.icon} key = {skill.skill} />))
-                    
-                        }
-                    </Stack>
-
-                        <Box my = {isMidScreen? 5 :10}>
-                            <ImageLoader />
-                        </Box>
-
-                    <Stack spacing = {isMidScreen? 2 :10}>
-                        {
-                            rightSkills.map(skill => (<Skill skill = {skill.skill} icon = {skill.icon} key = {skill.skill} />))
-                    
-                        }
-
-                    </Stack>
-
-                </Stack>
-
-                <Stack  direction={isMidScreen? 'column' :'row'} alignItems={'center'} justifyContent={'center'} spacing = {2} mt = {isMidScreen && 2}>
+                <MotionStack
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{
+                        duration: 0.5
+                    }}
+                    direction={isMidScreen ? 'column' : 'row'} alignItems={'center'} justifyContent={'center'} spacing={2} mt={isMidScreen && 2}>
                     {
-                        bottomSkills.map(skill => (<Skill skill = {skill.skill} icon = {skill.icon} key = {skill.skill} />))
+                        bottomSkills.map(skill => (<Skill skill={skill.skill} icon={skill.icon} key={skill.skill} />))
                     }
-                </Stack>
+                </MotionStack>
             </Box>
 
 
