@@ -4,6 +4,7 @@ import { Box, Container, Typography } from '@mui/material'
 import Home from '../home/Home'
 import ParticlesBackground from '../particles/ParticlesBackground'
 import Navbar from '../navbar/Navbar'
+import Footer from '../footer/Footer'
 
 
 function Main() {
@@ -16,6 +17,7 @@ function Main() {
 
                 <Home />
             </Container>
+            <Footer />
         </div>
     )
 }

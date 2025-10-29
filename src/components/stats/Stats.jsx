@@ -5,6 +5,7 @@ import EqualizerIcon from '@mui/icons-material/Equalizer';
 import Stat from './Stat';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { motion } from 'framer-motion';
+import OneWordTitle from '../section-title/OneWordTitle';
 
 
 function Stats() {
@@ -22,10 +23,7 @@ function Stats() {
       gap: 10
     }}>
       <SectionTitle  >
-        <Typography color={theme.palette.text.primary} fontSize="1.5rem">Statistics</Typography>
-        <EqualizerIcon sx={{
-          color: theme.palette.primary.main
-        }} />
+        <OneWordTitle title = 'Statistics' icon = {EqualizerIcon} />
       </SectionTitle>
       <Box  sx = {{
         display: 'flex',
