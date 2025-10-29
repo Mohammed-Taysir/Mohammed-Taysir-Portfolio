@@ -3,6 +3,7 @@ import React from 'react'
 import MyInfo from '../my-info/MyInfo'
 import Stats from '../stats/Stats'
 import TechnicalSkills from '../technical-skills/TechnicalSkills'
+import SoftSkills from '../soft-skills/SoftSkills'
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <MyInfo />
         <Stats />
         <TechnicalSkills />
+        <SoftSkills />
       </Box>
   )
  

@@ -5,7 +5,8 @@ import MemoryIcon from '@mui/icons-material/Memory';
 import HexLoader from '../hexloader/HexLoader';
 import Skill from './Skill';
 import CodeOffOutlinedIcon from '@mui/icons-material/CodeOffOutlined';
-
+import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
+import TwoWordsTitle from '../section-title/TwoWordsTitle';
   const leftSkills = [
     {
       title: 'Programming Languages',
@@ -54,11 +55,9 @@ function TechnicalSkills() {
     const theme = useTheme();
     const isLarge = useMediaQuery('(max-width: 1120px)');
     return (
-        <Box py={5} display={'flex'} flexDirection={'column'} gap={5} >
+        <Box id = {'technical'} py={5} display={'flex'} flexDirection={'column'} gap={5} >
             <SectionTitle>
-                <Typography color={theme.palette.text.primary} fontSize="1.5rem">Technical <MemoryIcon sx={{
-                    color: theme.palette.primary.main
-                }} /> Skills</Typography>
+                <TwoWordsTitle first = 'Technical' last = 'Skills' icon = {MemoryIcon} />
             </SectionTitle>
 
             <Stack direction={isLarge? "column" :'row'} justifyContent={'space-between'} alignItems={'center'} flexWrap = {'wrap'}>
@@ -70,7 +69,7 @@ function TechnicalSkills() {
                     gap: 4
                  }}>
 
-                    <Skill title={'Programming Languages'} description={'Js - C# - Java - C++ - Python'} icon={CodeOffOutlinedIcon} order={2}  />
+                    <Skill title={'Programming Languages'} description={'Js - C# - Java - C++ - Python'} icon={CodeOutlinedIcon} order={2}  />
                     <Box sx = {{
                         transform: !isLarge ? 'translateX(-30px)': 'translateX(0)'
                     }}>

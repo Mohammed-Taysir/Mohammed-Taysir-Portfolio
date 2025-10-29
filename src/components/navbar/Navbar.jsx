@@ -117,7 +117,7 @@ function Navbar() {
                     rotate: '180deg'
                   }
                 }}>
-                  <Link href='#about' sx={{
+                  <Link  sx={{
                     textDecoration: 'none',
                     color: theme.palette.text.secondary,
                     fontSize: '16px',

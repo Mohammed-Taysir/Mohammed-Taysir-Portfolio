@@ -54,7 +54,7 @@ function Stats() {
       initial = {{y: 50, opacity: 0}}
       whileInView={{y: 0, opacity: 1}}
       transition = {{
-        delay: 2,
+        delay: 1.5,
         duration: 0.5
       }}
       component = {'a'} href = "https://github.com/Mohammed-Taysir" target = '_blank' variant='contained' sx = {{
