@@ -388,6 +388,26 @@ body {
 
 
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #16a34a; 
+  border-radius: 10px;
+  border: 2px solid #1a1a1a;
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #16a34a #1a1a1a;
+}
+
 
 
 
