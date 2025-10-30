@@ -2,17 +2,31 @@ import { Box, Chip, Link, Stack, Typography, useTheme } from '@mui/material'
 import React from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import { motion } from 'framer-motion';
 
 function Project({project}) {
     const theme = useTheme();
+    const MotionBox = motion(Box);
   return (
-    <Box position={'relative'} borderRadius={2} overflow={'hidden'} mt = {5} sx = {{
+    <MotionBox
+    initial = {{y: 100, opacity: 0}}
+    whileInView={{y: 0, opacity: 1}}
+    transition={{
+        delay: 0.3,
+        duration: 0.5
+    }}
+     position={'relative'} borderRadius={2} overflow={'hidden'} mt = {5} sx = {{
         ":hover .overlay": {
             display: 'block'
         },
         ":hover .show-text": {
             display: 'flex'
+        },
+        ":hover .image": {
+            scale: 1.2
         }
+
+
     }}>
         <Box className = 'overlay' sx = {{
             display: 'none',
@@ -22,10 +36,13 @@ function Project({project}) {
             top: 0,
             left: 0,
             bgcolor: 'rgba(0, 128, 0, 0.45)',
-            transition: '0.5s display'
+            transition: '0.5s display',
+            zIndex: 999
         }} />
 
-        <Box component={'img'} src = {project.image} width = '100%' height = '100%' borderRadius = {2}  />
+        <Box component={'img'} className='image' src = {project.image} width = '100%' height = '100%' borderRadius = {2} sx = {{
+            transition: '0.5s'
+        }}  />
         <Box className = "show-text" position={'absolute'} sx = {{
             transition: '0.5s display',
             bottom: 20,
@@ -67,7 +84,7 @@ function Project({project}) {
 
         </Box>
 
-    </Box>
+    </MotionBox>
   )
 }
 

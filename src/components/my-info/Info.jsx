@@ -1,7 +1,7 @@
-import { Box, Button, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Button, Link, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { motion } from 'framer-motion';
 import React from 'react'
-import { Link } from 'react-router-dom';
+
 import { ReactTyped } from "react-typed";
 import MotionButton from '../animation/MotionButton';
 function Info() {
@@ -30,10 +30,7 @@ function Info() {
       gap: 2,
       p: 1
     }} >
-      <Typography sx={{
-        fontSize: '16px',
-        fontWeight: 'bold'
-      }}>Hello 👋,</Typography>
+      
 
       <Box display={'flex'} alignItems={'center'} gap={1} >
         <Box display={'flex'} alignItems={'center'}>
@@ -50,8 +47,8 @@ function Info() {
       </Box>
 
       <Box>
-        <Typography textAlign={isMidScreen && 'center'} lineHeight={'1.7'} color={theme.palette.text.secondary} mb={1} >Highly motivated Front-End Developer with a strong foundation in HTML, CSS, JavaScript, Bootstrap, React, and MUI. Skilled in building responsive and user-friendly web applications with clean, efficient, and maintainable code. Possess a solid understanding of data structures and algorithms, enabling the development of optimized and scalable solutions. Continuously expanding expertise in back-end development using ASP.NET Core.</Typography>
-        <Typography textAlign={isMidScreen && 'center'} lineHeight={'1.7'} color={theme.palette.text.secondary} >Proficient in multiple programming languages, including Python, Java, C++, and C#, with a passion for learning new technologies and improving software development skills. Adept at collaborating in dynamic teams and delivering high-quality projects on time.</Typography>
+        <Typography textAlign={isMidScreen && 'center'} lineHeight={'1.7'} color={theme.palette.text.secondary} mb={1} >Highly motivated Front-End Developer skilled in HTML, CSS, JavaScript, Bootstrap, React, and MUI. Experienced in building responsive, user-friendly web applications with clean and maintainable code. Strong understanding of data structures and algorithms for optimized, scalable solutions. Expanding back-end expertise in ASP.NET Core. Proficient in Python, Java, C++, and C#. Collaborative team player delivering high-quality projects on time.</Typography>
+        
       </Box>
 
       <Stack direction={'row'} alignItems={'center'} spacing={2}>
@@ -68,7 +65,7 @@ function Info() {
           size='large'
         >View Cv</ButtonMotion>
 
-        <ButtonMotion sx={{
+        <ButtonMotion component = {Link} href = '#stats' sx={{
           textTransform: 'capitalize',
           color: theme.palette.primary.main,
           bgcolor: theme.palette.text.primary

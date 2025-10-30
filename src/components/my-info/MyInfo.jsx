@@ -5,6 +5,7 @@ import React from 'react'
 import Info from './Info';
 
 import MainImage from './MainImage'
+import BlobImage from '../blob-image/BlobImage';
 
 
 function MyInfo() {
@@ -19,7 +20,8 @@ function MyInfo() {
         py: 8
     }} component={'section'} >
         <Info />
-        <MainImage />
+        {/* <MainImage /> */}
+        <BlobImage />
 
     </Box>
   )

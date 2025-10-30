@@ -15,7 +15,7 @@ function Stats() {
  
   return (
     <Box
-
+    id = "stats"
     component={'section'} py = {4} sx = {{
       
       display: 'flex',

@@ -5,6 +5,8 @@ import Stats from '../stats/Stats'
 import TechnicalSkills from '../technical-skills/TechnicalSkills'
 import SoftSkills from '../soft-skills/SoftSkills'
 import Projects from '../projects/Projects'
+import BlobImage from '../blob-image/BlobImage'
+
 
 function Home() {
   return (
@@ -17,6 +19,9 @@ function Home() {
         <TechnicalSkills />
         <SoftSkills />
         <Projects />
+
+        
+   
       </Box>
   )
  

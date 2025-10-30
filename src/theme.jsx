@@ -11,6 +11,7 @@ const theme = (mode) => createTheme({
             default: "#fff",
             paper: "#f4f4f5",
         },
+        
         text: {
             primary: "#09090b",
             secondary: "#71717a",
