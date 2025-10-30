@@ -19,7 +19,8 @@ const theme = (mode) => createTheme({
         divider: "#E5E7EB",
         borderColor: {
             main: '#e5e7eb'
-        }
+        },
+        hoverColor: '#fff'
     } : {
         primary: { main: "#22c55e" },
         background: {
@@ -34,7 +35,9 @@ const theme = (mode) => createTheme({
         divider: "#334155",
         borderColor: {
             main: '#27272a'
-        }
+        },
+        hoverColor: '#000'
+
     })
     }
 });

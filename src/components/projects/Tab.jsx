@@ -1,14 +1,24 @@
 import { Box, Typography, useTheme } from '@mui/material'
 import React from 'react'
 
-function Tab({title, isActive}) {
+
+
+
+
+
+function Tab({title, selected, onSelect, onFilter}) {
     const theme = useTheme();
   return (
-    <Box 
+    <Box
+    onClick = {() => {
+        onFilter(title)
+        onSelect(title)
+    }} 
         p = {"10px"} 
         sx = {{
             cursor: 'pointer',
-            bgcolor: theme.palette.background.paper,
+            bgcolor:selected == title? theme.palette.primary.main : theme.palette.background.paper,
+            color: selected == title? theme.palette.hoverColor: theme.palette.text.primary,
             borderRadius: 2,
             ":hover": {
                 bgcolor: theme.palette.primary.main
@@ -16,6 +26,8 @@ function Tab({title, isActive}) {
             ":hover .title": {
                 color: "#fff"
             }
+
+            
         }}
     >
         <Typography className = 'title' fontSize = "13px" fontWeight={'normal'}>{title}</Typography>
