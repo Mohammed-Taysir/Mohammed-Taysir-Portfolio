@@ -38,7 +38,7 @@ function SoftSkills() {
     const isMidScreen = useMediaQuery('(max-width: 820px)');
     const MotionStack = motion(Stack);
     return (
-        <Box py={5} display={'flex'} flexDirection={'column'} gap={10}>
+        <Box id = "soft" py={5} display={'flex'} flexDirection={'column'} gap={10}>
             <SectionTitle>
                 <TwoWordsTitle first='Soft' last="Skills" icon={ImportContactsTwoToneIcon} />
             </SectionTitle>

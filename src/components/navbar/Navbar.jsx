@@ -45,11 +45,7 @@ const aboutList = [
     path: '#education',
     icon: SchoolOutlinedIcon
   },
-  {
-    name: 'Experience',
-    path: '#experience',
-    icon: ScienceOutlinedIcon
-  },
+ 
   {
     name: 'Reviews',
     path: '#reviews',

@@ -57,7 +57,7 @@ const testimonials = [
 ];
 function CustomerReviews() {
   return (
-    <Box py = {5} display={'flex'} flexDirection={'column'} gap = {10}>
+    <Box id = "reviews" py = {5} display={'flex'} flexDirection={'column'} gap = {10}>
         <SectionTitle>
             <TwoWordsTitle first = "Customer" last = "Reviews" icon = {StarBorderOutlinedIcon} />
         </SectionTitle>

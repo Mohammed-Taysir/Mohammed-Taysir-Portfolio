@@ -7,7 +7,7 @@ import ProjectsTabs from './ProjectsTabs';
 
 function Projects() {
   return (
-    <Box py = {5} display={'flex'} flexDirection={'column'} gap = {10}>
+    <Box id = 'projects' py = {5} display={'flex'} flexDirection={'column'} gap = {10}>
       <SectionTitle >
         <OneWordTitle title = {'Projects'} icon = {FolderOpenOutlinedIcon} />
 
