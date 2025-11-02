@@ -9,9 +9,11 @@ import './index.css'
 import App from './App.jsx'
 import ThemeContextProvider from './context/ThemeContext.jsx';
 import { BrowserRouter } from 'react-router-dom';
+import { CssBaseline } from '@mui/material';
 
 createRoot(document.getElementById('root')).render(
   <ThemeContextProvider>
+    
     <ToastContainer />
       <App />
   </ThemeContextProvider>

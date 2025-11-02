@@ -27,6 +27,7 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Stack, Typography } from '@mui/material';
+import CustomSwiper from '../swiper/CustomSwiper';
 
 // import required modules
 
@@ -43,7 +44,7 @@ const projects = [
     {
         id: 1,
         name: 'Portfolio',
-        categories: ["All","Landing Pages"],
+        categories: ["All", "Landing Pages"],
         image: portfolio,
         technologies: ["ReactJs", "MUI", "Framer Motion", "SwiperJs"],
         live: "https://mohammedtaysirportfolio.onrender.com/",
@@ -52,7 +53,7 @@ const projects = [
     {
         id: 2,
         name: 'Alkhatib Store',
-        categories: ["All","Real Websites", "E-commerce Websites"],
+        categories: ["All", "Real Websites", "E-commerce Websites"],
         image: alkhatib,
         technologies: ["ReactJs", "MUI", "Framer Motion", "SwiperJs"],
         live: "https://alkhatib-store.onrender.com/",
@@ -61,7 +62,7 @@ const projects = [
     {
         id: 3,
         name: 'Fynode Store',
-        categories: ["All","E-commerce Websites"],
+        categories: ["All", "E-commerce Websites"],
         image: fynode,
         technologies: ["Html", "Css", "JavaScript", "Bootstrap", "SwiperJs"],
         live: "https://mohammed-taysir.github.io/E-commerce-Website/",
@@ -79,7 +80,7 @@ const projects = [
     {
         id: 5,
         name: 'Hecto Store',
-        categories: ["All","E-commerce Websites", "Landing Pages"],
+        categories: ["All", "E-commerce Websites", "Landing Pages"],
         image: hecto,
         technologies: ["Html", "Css"],
         live: "https://mohammed-taysir.github.io/Hecto-Project/",
@@ -88,7 +89,7 @@ const projects = [
     {
         id: 6,
         name: 'Kasper',
-        categories: ["All","Landing Pages"],
+        categories: ["All", "Landing Pages"],
         image: kasper,
         technologies: ["Html", "Css"],
         live: "https://mohammed-taysir.github.io/Kasper/",
@@ -97,7 +98,7 @@ const projects = [
     {
         id: 7,
         name: 'Leon',
-        categories: ["All","Landing Pages"],
+        categories: ["All", "Landing Pages"],
         image: landing,
         technologies: ["Html", "Css"],
         live: "https://mohammed-taysir.github.io/Leon/",
@@ -106,7 +107,7 @@ const projects = [
     {
         id: 8,
         name: 'Medo World',
-        categories: ["All","Landing Pages"],
+        categories: ["All", "Landing Pages"],
         image: medo,
         technologies: ["Html", "Css"],
         live: "https://mohammed-taysir.github.io/Medo-World/",
@@ -128,7 +129,7 @@ function ProjectsTabs() {
     const nextRef = useRef(null);
     const swiperRef = useRef(null);
 
-   useEffect(() => {
+    useEffect(() => {
         if (
             swiperRef.current &&
             prevRef.current &&
@@ -146,79 +147,20 @@ function ProjectsTabs() {
 
             <Box display={'flex'} gap={2} justifyContent={'center'} flexWrap={'wrap'}>
                 {
-                    tabs.map(tab => (<Tab selected = {selected} onSelect = {setSelected} onFilter = {filterPojects} key={tab} title={tab} />))
+                    tabs.map(tab => (<Tab selected={selected} onSelect={setSelected} onFilter={filterPojects} key={tab} title={tab} />))
                 }
 
             </Box>
 
-            <Box pb={5}>
-                <Swiper
+            
 
-                    
-                    
-                    style={{ overflow: 'visible' }}
-
-                    pagination={{ clickable: true }}
-                    onSwiper={(swiper) => {
-                        swiperRef.current = swiper;
-                    }}
-                    breakpoints={{
-                        320: {
-                            slidesPerView: 1,
-                            spaceBetween: 35
-                        },
-                        1024: {
-                            slidesPerView: 2,
-                            spaceBetween: 40
-                        }
-                    }}
-                    modules={[Navigation, Pagination]} className="mySwiper">
-                    {
-                        filterdProjects.map(project => (<SwiperSlide key={project.id}>
-                            <Project project={project} />
-                        </SwiperSlide>))
-                    }
-                </Swiper>
-                <Stack direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
-                    <Stack direction={'row'} alignItems={'center'} spacing = {1}>
-                        <Typography fontWeight={'bold'} >Total Projects:</Typography>
-                        <Typography color = {theme.palette.primary.main} fontWeight = 'bold'>{filterdProjects.length}</Typography>
-                    </Stack>
-                    <Box className="swiper-navigation" sx={{
-                    display: 'flex',
-                    gap: 4,
-                    alignItems: 'center',
-                   
-                }}>
-                    <Box className="custom-prev"
-                        ref={prevRef}
-                        sx={{
-                            bgcolor: theme.palette.background.paper,
-                            width: '30px',
-                            height: '30px',
-                            borderRadius: '50%',
-                            border: `1px solid ${theme.palette.primary.main}`,
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            cursor: "pointer"
-                        }}><KeyboardArrowLeftIcon /></Box>
-                    <Box className="custom-next"
-                        ref={nextRef}
-                        sx={{
-                            bgcolor: theme.palette.background.paper,
-                            width: '30px',
-                            height: '30px',
-                            borderRadius: '50%',
-                            border: `1px solid ${theme.palette.primary.main}`,
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            cursor: "pointer"
-                        }}><KeyboardArrowRightIcon /></Box>
-                </Box>
-                </Stack>
-            </Box>
+            <CustomSwiper text = 'Total Projects' total = {projects.length}>
+                {
+                    filterdProjects.map(project => (<SwiperSlide key={project.id}>
+                        <Project project={project} />
+                    </SwiperSlide>))
+                }
+            </CustomSwiper>
 
 
 

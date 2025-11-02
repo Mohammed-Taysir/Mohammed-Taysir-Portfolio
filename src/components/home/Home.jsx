@@ -7,6 +7,7 @@ import SoftSkills from '../soft-skills/SoftSkills'
 import Projects from '../projects/Projects'
 import BlobImage from '../blob-image/BlobImage'
 import Contact from '../contact/Contact'
+import CustomerReviews from '../customer-reviews/CustomerReviews'
 
 
 
@@ -21,6 +22,7 @@ function Home() {
         <TechnicalSkills />
         <SoftSkills />
         <Projects />
+        <CustomerReviews />
         <Contact />
         
    
