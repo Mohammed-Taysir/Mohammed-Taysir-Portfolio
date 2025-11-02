@@ -34,8 +34,8 @@ function Stats() {
       }}>
         <Stat delay={0} num = {22} title = {"Age"}  />
         <Stat delay={0.5} num = {1} title = {"Year Of Experince"}  />
-        <Stat delay={1} num = {3} title = {"Total Big Projects"}  />
-        <Stat delay={1.5} num = {1} title = {"Clients"}  />
+        <Stat delay={1} num = {5} title = {"Total Big Projects"}  />
+        <Stat delay={1.5} num = {5} title = {"Clients"}  />
       </Box>
 
       <MotionBox
