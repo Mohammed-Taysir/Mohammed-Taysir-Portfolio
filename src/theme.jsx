@@ -21,6 +21,9 @@ const theme = (mode) => createTheme({
         borderColor: {
             main: '#e5e7eb'
         },
+        shadow: {
+            main: 'rgba(0, 0, 0, 0.1)'
+        },
         hoverColor: '#fff'
     } : {
         primary: { main: "#22c55e" },
@@ -36,6 +39,9 @@ const theme = (mode) => createTheme({
         divider: "#334155",
         borderColor: {
             main: '#27272a'
+        },
+        shadow: {
+            main: 'rgba(255, 255, 255, 0.05)'
         },
         hoverColor: '#000'
 

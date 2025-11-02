@@ -8,6 +8,7 @@ import Projects from '../projects/Projects'
 import BlobImage from '../blob-image/BlobImage'
 import Contact from '../contact/Contact'
 import CustomerReviews from '../customer-reviews/CustomerReviews'
+import Education from '../education/Education'
 
 
 
@@ -22,6 +23,7 @@ function Home() {
         <TechnicalSkills />
         <SoftSkills />
         <Projects />
+        <Education />
         <CustomerReviews />
         <Contact />
         

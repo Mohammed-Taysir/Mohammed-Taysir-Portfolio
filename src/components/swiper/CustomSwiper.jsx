@@ -42,7 +42,7 @@ function CustomSwiper({text, total,children}) {
 
                     
                     
-                    style={{ overflow: 'visible' }}
+                    style={{ overflow: 'hidden' }}
 
                     pagination={{ clickable: true }}
                     onSwiper={(swiper) => {
