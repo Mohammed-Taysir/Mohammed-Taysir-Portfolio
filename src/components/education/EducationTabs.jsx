@@ -113,7 +113,13 @@ function EducationTabs() {
 
                 </Box>
             </MotionBox>
-        ): (<Box>
+        ): (<MotionBox
+            initial = {{y: 100, opacity: 0}}
+            whileInView={{y: 0, opacity: 1}}
+            transition = {{
+                duration: 0.5
+            }}
+        >
 
             <Box sx = {{
 
@@ -130,7 +136,7 @@ function EducationTabs() {
 
                 </CustomSwiper>
             </Box>
-        </Box>)}
+        </MotionBox>)}
 
         </Box>
         
