@@ -7,6 +7,7 @@ import Skill from './Skill';
 import CodeOffOutlinedIcon from '@mui/icons-material/CodeOffOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import TwoWordsTitle from '../section-title/TwoWordsTitle';
+import { motion } from 'framer-motion';
   const leftSkills = [
     {
       title: 'Programming Languages',
@@ -54,6 +55,7 @@ import TwoWordsTitle from '../section-title/TwoWordsTitle';
 function TechnicalSkills() {
     const theme = useTheme();
     const isLarge = useMediaQuery('(max-width: 1120px)');
+    const MotionBox = motion(Box);
     return (
         <Box id = {'technical'} py={5} display={'flex'} flexDirection={'column'} gap={5} >
             <SectionTitle>
@@ -61,7 +63,10 @@ function TechnicalSkills() {
             </SectionTitle>
 
             <Stack direction={isLarge? "column" :'row'} justifyContent={'space-between'} alignItems={'center'} flexWrap = {'wrap'}>
-                <Box 
+                <MotionBox 
+                initial = {{x: -100, opacity: 0}}
+                whileInView={{x: 0, opacity: 1}}
+                transition={{duration: 0.8}}
                 sx = {{
                     display: 'flex',
                     flexDirection: 'column',
@@ -77,13 +82,17 @@ function TechnicalSkills() {
                     </Box>
                     <Skill title={'Front-end'} description={'Html-Css-Js-Bootstrap-React-MUI-FramerMotion'} icon={CodeOffOutlinedIcon} order={2} />
 
-                </Box>
+                </MotionBox>
 
                 <Box  my = {10} width = {200} height = {200} position = 'relative' >
                     <HexLoader />
                 </Box>
 
-                 <Box sx = {{
+                 <MotionBox 
+                initial = {{x: 100, opacity: 0}}
+                whileInView={{x: 0, opacity: 1}}
+                transition={{duration: 0.8}}
+                 sx = {{
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 4
@@ -97,7 +106,7 @@ function TechnicalSkills() {
                     </Box>
                     <Skill title={'Front-end'} description={'Html-Css-Js-Bootstrap-React-MUI-FramerMotion'} icon={CodeOffOutlinedIcon} order={-1} />
 
-                </Box>
+                </MotionBox>
 
 
             </Stack>
