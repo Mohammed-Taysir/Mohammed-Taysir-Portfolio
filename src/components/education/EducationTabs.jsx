@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import Box from '@mui/material/Box';
 import { useTheme } from '@emotion/react';
-import { Button, Stack } from '@mui/material';
+import { Button, Stack, useMediaQuery } from '@mui/material';
 import { useState } from 'react';
 import Step from './Step';
 import { motion } from 'framer-motion';
@@ -39,6 +39,7 @@ function EducationTabs() {
     const theme = useTheme();
     const [value, setValue] = useState(0)
     const MotionBox = motion(Box);
+    const small = useMediaQuery('(max-width: 435px)');
     return (
         <Box
         >
@@ -46,7 +47,7 @@ function EducationTabs() {
                 p: '5px',
                 bgcolor: theme.palette.background.paper,
                 borderRadius: 2,
-                width: '400px',
+                width: small? '200px': '400px',
                 m: 'auto'
             }}>
 
