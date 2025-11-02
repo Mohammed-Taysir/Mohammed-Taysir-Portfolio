@@ -6,6 +6,8 @@ import TechnicalSkills from '../technical-skills/TechnicalSkills'
 import SoftSkills from '../soft-skills/SoftSkills'
 import Projects from '../projects/Projects'
 import BlobImage from '../blob-image/BlobImage'
+import Contact from '../contact/Contact'
+
 
 
 function Home() {
@@ -19,7 +21,7 @@ function Home() {
         <TechnicalSkills />
         <SoftSkills />
         <Projects />
-
+        <Contact />
         
    
       </Box>

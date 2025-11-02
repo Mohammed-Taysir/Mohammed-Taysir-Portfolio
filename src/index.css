@@ -428,5 +428,34 @@ body {
 
 			
 
+.custom-phone-input input {
+	background-color: var(--background-paper);
+	height: 100%;
+	color: var(--text-primary);
+	border: none
+}
 
+
+.custom-phone-input input:focus {
+	outline: none;
+}
+
+.phone-input:focus-within {
+	border: 2px solid var(--primary-main)
+}
+.phone-input:hover {
+	border: 2px solid var(--primary-main)
+}
+
+
+.PhoneInputCountrySelect option {
+	background: #27272a;
+	color: #fff;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.PhoneInputCountrySelect option:hover {
+	background-color: #f4f4f5 !important;
+}
 
