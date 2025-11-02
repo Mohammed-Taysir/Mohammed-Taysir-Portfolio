@@ -7,6 +7,11 @@ import { Button, Stack, useMediaQuery } from '@mui/material';
 import { useState } from 'react';
 import Step from './Step';
 import { motion } from 'framer-motion';
+import CustomSwiper from '../swiper/CustomSwiper';
+
+import frontcer from '../../assets/frontcer.png'
+import { SwiperSlide } from 'swiper/react';
+import Cer from './Cer';
 
 
 
@@ -32,6 +37,14 @@ for two years to enhance English language skills.`
     },
     
 
+]
+
+
+const certifications = [
+    {
+        id: 1,
+        image: frontcer
+    }
 ]
 
 function EducationTabs() {
@@ -103,13 +116,19 @@ function EducationTabs() {
         ): (<Box>
 
             <Box sx = {{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
+
                 mt: 5
             }}>
 
-                Soon
+                <CustomSwiper>
+
+                    {
+                        certifications.map(cer => (<SwiperSlide key = {cer.id}>
+                            <Cer cer = {cer} />    
+                        </SwiperSlide>))
+                    }
+
+                </CustomSwiper>
             </Box>
         </Box>)}
 

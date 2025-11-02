@@ -63,7 +63,7 @@ function CustomSwiper({text, total,children}) {
                 </Swiper>
                 <Stack direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
                     <Stack direction={'row'} alignItems={'center'} spacing = {1}>
-                        <Typography fontWeight={'bold'} >{text}:</Typography>
+                        <Typography fontWeight={'bold'} >{text}{text  && <span>:</span>}</Typography>
                         <Typography color = {theme.palette.primary.main} fontWeight = 'bold'>{total}</Typography>
                     </Stack>
                     <Box className="swiper-navigation" sx={{
