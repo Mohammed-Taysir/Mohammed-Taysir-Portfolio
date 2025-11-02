@@ -4,7 +4,7 @@ import React from 'react'
 
 import Info from './Info';
 
-import MainImage from './MainImage'
+// import MainImage from './MainImage'
 import BlobImage from '../blob-image/BlobImage';
 
 
