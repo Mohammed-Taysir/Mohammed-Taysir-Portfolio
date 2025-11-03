@@ -4,6 +4,7 @@ import React from 'react'
 
 import { ReactTyped } from "react-typed";
 import MotionButton from '../animation/MotionButton';
+import Icons from './Icons';
 function Info() {
   const theme = useTheme();
 
@@ -77,6 +78,8 @@ function Info() {
           size='large'
         >More Info</ButtonMotion>
       </Stack>
+
+      <Icons />
 
     </MotionBox>
   )
