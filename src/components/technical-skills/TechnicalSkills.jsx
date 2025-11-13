@@ -8,6 +8,8 @@ import CodeOffOutlinedIcon from '@mui/icons-material/CodeOffOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import TwoWordsTitle from '../section-title/TwoWordsTitle';
 import { motion } from 'framer-motion';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
   const leftSkills = [
     {
       title: 'Programming Languages',
@@ -78,7 +80,7 @@ function TechnicalSkills() {
                     <Box sx = {{
                         transform: !isLarge ? 'translateX(-30px)': 'translateX(0)'
                     }}>
-                        <Skill title={'Front-end'} description={'Html-Css-Js-Bootstrap-React-MUI-FramerMotion'} icon={CodeOffOutlinedIcon} order={2} />
+                        <Skill title={'Version Control'} description={'Git-Github-Command Line'} icon={GitHubIcon} order={2} />
                     </Box>
                     <Skill title={'Front-end'} description={'Html-Css-Js-Bootstrap-React-MUI-FramerMotion'} icon={CodeOffOutlinedIcon} order={2} />
 
